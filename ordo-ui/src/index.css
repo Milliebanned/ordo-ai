@@ -40,6 +40,9 @@ body {
   min-height: 100vh;
 }
 
+html, body { overflow-x: hidden; }
+@supports (overflow: clip) { html, body { overflow-x: clip; } }
+
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 

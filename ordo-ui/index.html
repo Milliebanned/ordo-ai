@@ -38,12 +38,16 @@
 
   * { box-sizing: border-box; }
   html, body { margin: 0; }
+  /* never allow sideways scrolling on touch devices */
+  html, body { overflow-x: hidden; }
+  @supports (overflow: clip) { html, body { overflow-x: clip; } }
   body {
     background: var(--bg);
     color: var(--ink);
     font-family: var(--font);
     -webkit-font-smoothing: antialiased;
-    padding-inline: clamp(16px, 2.6vw, 40px);
+    --gutter: clamp(16px, 2.6vw, 40px);
+    padding-inline: var(--gutter);
     padding-block: clamp(14px, 2.2vw, 30px) 0;
     overflow-x: hidden;
   }
@@ -268,6 +272,8 @@
     .nav > nav { display: none; }
     .hero { grid-template-columns: 1fr; min-height: 600px; align-content: center; padding-top: 40px; }
     .copy { padding-left: 0; grid-area: 1 / 1; }
+    /* hero runs edge to edge so the oversized robot is trimmed at the screen edge, not the page */
+    .hero { margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); overflow: hidden; }
     .orb-wrap { grid-area: 1 / 1; width: min(135%, 620px); justify-self: center; align-self: center; opacity: .5; pointer-events: none; }
     .hero::after { display: none; }
     h1 { text-shadow: 0 2px 24px rgba(7,6,10,.85); }
@@ -793,7 +799,7 @@
   var W = 1000, H = 430, S = 70, CW = 300, CH = 182, SP = 370, L = 1200, BW = 240, BX = 0, CRATE = 104, BASE = 62;
   function layout() {
     W = line.clientWidth; var small = W < 620;
-    S = small ? 44 : 70; CW = small ? Math.min(230, W * 0.68) : 300; CH = small ? 200 : 182;
+    S = small ? 34 : 70; CW = small ? Math.min(210, W * 0.58) : 300; CH = small ? (W < 360 ? 222 : 196) : 182;
     BW = S * 3.4; BX = W - BW / 2; CRATE = Math.round(22 + CH - 1.4 * S);
     H = Math.round(CRATE + 4.3 * S + 30);
     line.style.height = H + 'px';
