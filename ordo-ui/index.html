@@ -1014,9 +1014,9 @@
     analyze: ['bob is checking every line, one by one', 'bob squints at a very long function', 'bob taps the dependency tree with his wrench',
       'bob makes a note on his clipboard', 'bob adjusts his hard hat and keeps reading', 'bob double-checks the lockfile',
       'bob found something. writing it down.', 'bob is counting tests against sources', 'bob follows an import three levels deep'],
-    roadmap: ['bob is sorting findings by urgency', 'bob sketches a three-phase plan', 'bob moves the scary ones to the top',
-      'bob checks the plan twice', 'bob pencils in the quick wins'],
-    handoff: ['bob stamps the work orders: ready for review', 'bob packs everything into the crate', 'bob holds the door to the dashboard']
+    roadmap: ['watsonx is weighing business impact', 'watsonx sketches a three-phase plan', 'watsonx moves the riskiest items to the top',
+      'watsonx explains each ranking', 'watsonx pencils in the quick wins'],
+    handoff: ['ordo is packing the work orders', 'ordo stamps each one: ready for review', 'ordo is opening the dashboard']
   };
   var WORK = {
     analyze: [
@@ -1033,7 +1033,7 @@
     roadmap: [
       function () { return [['', 'score item ' + rnd(1, 20) + ' urgency × impact'], ['dim', ' → '], ['ok', rnd(10, 100) + '']]; },
       function () { return [['', 'assign phase ' + rnd(1, 3)], ['dim', ' · item ' + hex(6)]]; },
-      function () { return [['', 'watsonx.ai assist'], ['dim', ' · scoring item ' + rnd(1, 20) + ' · '], ['ok', 'ok']]; },
+      function () { return [['', 'granite model'], ['dim', ' · scoring item ' + rnd(1, 20) + ' · '], ['ok', 'ok']]; },
       function () { return [['dim', '0x' + hex(8) + '  ' + hex(4) + ' ' + hex(4) + ' ' + hex(4) + ' ' + hex(4)]]; }
     ],
     handoff: [function () { return [['', 'write work order ' + hex(6)], ['dim', ' .... '], ['ok', 'done']]; }]
@@ -1051,8 +1051,9 @@
     var burst = !reduceLog && Math.random() < 0.2 ? rnd(2, 4) : 1;
     for (var i = 0; i < burst; i++) {
       logN++;
-      if (logN % rnd(6, 9) === 0) logLine([['say', pick(SAY[logPhase])]]);
-      else logLine(pick(WORK[logPhase])());
+      var who = logPhase === 'roadmap' ? 'watsonx' : logPhase === 'handoff' ? 'ordo' : 'bob';   // Bob scans and detects; watsonx.ai scores and plans; Ordo delivers
+      if (logN % rnd(6, 9) === 0) logLine([['say', pick(SAY[logPhase])]], who);
+      else logLine(pick(WORK[logPhase])(), who);
     }
     logTimer = setTimeout(logTick, reduceLog ? 700 : rnd(35, 150));
   }
@@ -1066,7 +1067,7 @@
   }
   function setLogPhase(ph) {
     logPhase = ph;
-    logLine([['ok', ph === 'roadmap' ? 'scan complete' : 'plan ready'], ['dim', ph === 'roadmap' ? ' · building roadmap' : ' · handing off']], 'ordo');
+    logLine([['ok', ph === 'roadmap' ? 'scan complete' : 'plan ready'], ['dim', ph === 'roadmap' ? ' · handing findings to watsonx.ai' : ' · handing off to Ordo']], ph === 'roadmap' ? 'bob' : 'watsonx');
   }
   function stopLog(hide) { clearTimeout(logTimer); logTimer = 0; if (hide) logBox.hidden = true; }
 

@@ -45,7 +45,7 @@
 <body>
   <header><img src="ordo-logo.png" alt="Ordo"><span class="src">SOURCE · .bob/custom_modes.yaml · .bob/skills/</span></header>
   <p class="kicker">IBM Bob 2.0 · custom mode</p>
-  <h1>Ordo runs on IBM Bob 2.0. watsonx.ai assists.</h1>
+  <h1>Ordo runs on IBM Bob 2.0. Bob scans, watsonx.ai reasons.</h1>
   <div class="grid">
     <div class="scan mode">
       <div class="row"><span>Mode · slug: ordo</span><span class="pill">Active</span></div>
@@ -56,13 +56,13 @@
         <li>Generate a phased maintenance roadmap from that report</li>
         <li>Generate remediation plans and PR summaries for specific issues</li>
       </ul>
-      <p style="margin-top:16px; font-size:15px; color:#8fb2ff">Bob runs the scan and detection. IBM Granite on watsonx.ai assists with scoring, explanations and fix writing.</p>
+      <p style="margin-top:16px; font-size:15px; color:#8fb2ff">Bob runs the scan and detects the debt. IBM Granite on watsonx.ai scores findings, explains the ranking and writes the fixes.</p>
       <div class="tools"><span>read</span><span>edit</span><span>execute</span><span>mcp</span><span>skill</span><span>todo</span><span>subagent</span><span>mode</span></div>
     </div>
     <div class="skills">
       <div class="glass skill"><div class="name">skill · <b>analyze-repo</b></div><p>Triggers on "analyze", "scan", or a pasted GitHub URL. Runs the full scan and shows the ranked report.</p><code>POST /analyze</code></div>
-      <div class="glass skill"><div class="name">skill · <b>explain-issue</b></div><p>Triggers on "why is this ranked here" or "explain issue #N". Returns the model's reasoning.</p><code>POST /remediate · explainOnly</code></div>
-      <div class="glass skill"><div class="name">skill · <b>generate-fix</b></div><p>Triggers on "generate fix" or "PR summary for #N". Returns the fix plan and PR summary.</p><code>POST /remediate</code></div>
+      <div class="glass skill"><div class="name">skill · <b>explain-issue</b></div><p>Triggers on "why is this ranked here" or "explain issue #N". Returns watsonx.ai's reasoning.</p><code>POST /remediate · explainOnly</code></div>
+      <div class="glass skill"><div class="name">skill · <b>generate-fix</b></div><p>Triggers on "generate fix" or "PR summary for #N". Returns the fix plan and PR summary written by watsonx.ai.</p><code>POST /remediate</code></div>
     </div>
   </div>
   <div class="glass chat">

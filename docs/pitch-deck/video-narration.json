@@ -13,18 +13,18 @@
     {
       "id": "s4",
       "slide": 4,
-      "text": "Ordo closes that gap in one pass. Running on IBM Bob 2.0, Bob scans a GitHub repository, detects the debt, ranks every finding by real risk, and prepares the fix, the tests, and the pull request."
+      "text": "Ordo closes that gap. IBM Bob 2.0 scans the repository and detects the debt, watsonx dot AI ranks it by real risk, and Ordo hands your team the fix."
     },
     {
       "id": "s6",
       "slide": 6,
-      "text": "Bob does the heavy lifting. It runs the analysis and ranks every finding by urgency, business impact, and fix effort, with IBM watsonx dot AI assisting on the scoring and plain English explanations. Let's see it live."
+      "text": "Bob runs the scan and detects every issue. Then IBM watsonx dot AI scores each one for urgency, impact, and effort, and explains why. Let's see it live."
     }
   ],
   "demo": [
     {
       "id": "d1",
-      "text": "This is Ordo's web app, running on Vercel. We'll have Bob scan a real project, Agora, straight from GitHub."
+      "text": "This is Ordo's web app, running on Vercel. We'll scan a real project, Agora, straight from GitHub."
     },
     {
       "id": "d2",
@@ -32,7 +32,7 @@
     },
     {
       "id": "d3",
-      "text": "Seconds later, the dashboard. Bob found twenty issues, all of them high urgency, each ranked for urgency, impact, and effort, with watsonx helping to explain why."
+      "text": "Seconds later, Ordo's dashboard. Bob detected twenty issues, and watsonx ranked all of them high urgency, scoring each for urgency, impact, and effort."
     },
     {
       "id": "d4",
@@ -40,19 +40,19 @@
     },
     {
       "id": "d5",
-      "text": "Bob then sequences everything into a roadmap. An overall assessment, then three phases the team can schedule."
+      "text": "watsonx then writes the roadmap. An overall assessment, then three phases the team can schedule."
     },
     {
       "id": "d6",
-      "text": "Open any issue to drill in. Ask why it is ranked here, and Bob explains its reasoning in plain English."
+      "text": "Open any issue to drill in. Ask why it is ranked here, and watsonx explains its reasoning in plain English."
     },
     {
       "id": "d7",
-      "text": "Then generate the fix. Bob returns a step by step remediation plan, code hints, a testing strategy, and a pull request summary, ready to copy straight into GitHub with one click."
+      "text": "Then generate the fix. watsonx writes a step by step remediation plan, code hints, a testing strategy, and a pull request summary, and Ordo lets you copy it straight into GitHub with one click."
     },
     {
       "id": "d8",
-      "text": "Under the hood, this is IBM Bob 2.0. Ordo ships as a custom Bob mode with three skills, analyze repo, explain issue, and generate fix. Bob runs the scan and detection, with watsonx dot AI assisting."
+      "text": "Under the hood, Ordo is a custom IBM Bob 2.0 mode with three skills. Bob runs the scan and detects the debt. watsonx dot AI does the scoring and the writing."
     },
     {
       "id": "d9",
@@ -63,7 +63,7 @@
     {
       "id": "s14",
       "slide": 14,
-      "text": "Ordo, built on IBM Bob 2.0, turns software chaos into order. Try it today at ordo with bob dot vercel dot app."
+      "text": "Ordo, built on IBM Bob 2.0 with watsonx dot AI, turns software chaos into order. Try it today at ordo with bob dot vercel dot app."
     }
   ]
 }
