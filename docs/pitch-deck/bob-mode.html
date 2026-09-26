@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ordo · IBM Bob mode</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Shows the project's real IBM Bob configuration (.bob/custom_modes.yaml and .bob/skills) in the product's style */
+  :root { --bg:#07060a; --ink:#f4f3f7; --soft:#b9b6c2; --dim:#8d8a97; --line:rgba(255,255,255,.14); --lines:rgba(255,255,255,.08); --blue:#5b9bff; --ok:#6fe3b0;
+    --font:"Inter",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html, body { background:var(--bg); color:var(--ink); font-family:var(--font); -webkit-font-smoothing:antialiased; }
+  body { min-height:100vh; padding:44px 64px; position:relative; overflow:hidden; }
+  body::before { content:""; position:absolute; left:-4%; top:-220px; width:50%; height:520px; z-index:-1;
+    background:radial-gradient(closest-side, rgba(37,99,235,.32), rgba(37,99,235,.1) 45%, rgba(37,99,235,0)); }
+  header { display:flex; justify-content:space-between; align-items:center; }
+  header img { height:34px; }
+  .src { font-family:var(--mono); font-size:13px; letter-spacing:.08em; color:var(--dim); }
+  .kicker { font-family:var(--mono); font-size:14px; letter-spacing:.16em; text-transform:uppercase; color:var(--blue); margin:34px 0 12px; }
+  h1 { font-size:44px; font-weight:400; letter-spacing:-.015em; }
+  .grid { display:grid; grid-template-columns: 1.05fr 1fr; gap:26px; margin-top:28px; }
+  .glass { border:1px solid var(--line); border-radius:22px; background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.015)); box-shadow:0 1px 0 rgba(255,255,255,.06) inset; }
+  .scan { border-radius:22px; border:1px solid rgba(140,180,255,.28);
+    background: linear-gradient(rgba(91,155,255,.07) 1px, transparent 1px) 0 0/100% 28px, linear-gradient(90deg, rgba(91,155,255,.07) 1px, transparent 1px) 0 0/28px 100%, linear-gradient(155deg,#16264d 0%,#0d1530 55%,#0a0f22 100%); }
+  .mode { padding:28px 30px; }
+  .row { display:flex; justify-content:space-between; align-items:center; font-family:var(--mono); font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:#8fb2ff; }
+  .pill { font-family:var(--font); font-size:13px; letter-spacing:0; text-transform:none; padding:3px 12px; border-radius:999px; border:1px solid currentColor; color:var(--ok); }
+  .mode h2 { margin:18px 0 12px; font-size:30px; font-weight:400; }
+  .mode p { font-size:17px; line-height:1.65; font-weight:300; color:#d3dbef; }
+  .caps { margin:18px 0 0; list-style:none; counter-reset:c; }
+  .caps li { counter-increment:c; display:grid; grid-template-columns:34px 1fr; padding:9px 0; border-top:1px dashed rgba(140,180,255,.25); font-size:16px; color:#d3dbef; font-weight:300; }
+  .caps li::before { content:counter(c, decimal-leading-zero); font-family:var(--mono); font-size:13px; color:var(--blue); padding-top:2px; }
+  .tools { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+  .tools span { font-family:var(--mono); font-size:12.5px; color:var(--soft); padding:4px 10px; border:1px solid var(--line); border-radius:8px; }
+  .skills { display:grid; gap:14px; }
+  .skill { padding:20px 24px; }
+  .skill .name { font-family:var(--mono); font-size:15px; color:var(--blue); }
+  .skill .name b { color:var(--ink); font-weight:500; }
+  .skill p { margin-top:8px; font-size:15.5px; line-height:1.6; font-weight:300; color:var(--soft); }
+  .skill code { font-family:var(--mono); font-size:13px; color:var(--dim); display:block; margin-top:10px; }
+  .chat { margin-top:26px; padding:20px 26px; font-family:var(--mono); font-size:16px; line-height:1.9; color:var(--soft); display:grid; grid-template-columns:1fr 1fr; column-gap:30px; }
+  .chat b { color:var(--blue); font-weight:400; }
+</style>
+</head>
+<body>
+  <header><img src="ordo-logo.png" alt="Ordo"><span class="src">SOURCE · .bob/custom_modes.yaml · .bob/skills/</span></header>
+  <p class="kicker">IBM Bob · custom mode</p>
+  <h1>Ordo inside IBM Bob, IBM's AI coding assistant.</h1>
+  <div class="grid">
+    <div class="scan mode">
+      <div class="row"><span>Mode · slug: ordo</span><span class="pill">Active</span></div>
+      <h2>Ordo, AI maintenance engineer</h2>
+      <p>Helps software teams find technical debt, understand its business impact, and fix it before it becomes expensive. Every finding is backed by evidence from the code.</p>
+      <ul class="caps">
+        <li>Analyze a GitHub repository into a prioritized debt report</li>
+        <li>Generate a phased maintenance roadmap from that report</li>
+        <li>Generate remediation plans and PR summaries for specific issues</li>
+      </ul>
+      <div class="tools"><span>read</span><span>edit</span><span>execute</span><span>mcp</span><span>skill</span><span>todo</span><span>subagent</span><span>mode</span></div>
+    </div>
+    <div class="skills">
+      <div class="glass skill"><div class="name">skill · <b>analyze-repo</b></div><p>Triggers on "analyze", "scan", or a pasted GitHub URL. Runs the full scan and shows the ranked report.</p><code>POST /analyze</code></div>
+      <div class="glass skill"><div class="name">skill · <b>explain-issue</b></div><p>Triggers on "why is this ranked here" or "explain issue #N". Returns the model's reasoning.</p><code>POST /remediate · explainOnly</code></div>
+      <div class="glass skill"><div class="name">skill · <b>generate-fix</b></div><p>Triggers on "generate fix" or "PR summary for #N". Returns the fix plan and PR summary.</p><code>POST /remediate</code></div>
+    </div>
+  </div>
+  <div class="glass chat">
+    <span><b>you ›</b> Analyze https://github.com/Milliebanned/agora</span>
+    <span><b>you ›</b> Which issue should I fix first and why?</span>
+    <span><b>you ›</b> Explain issue #3</span>
+    <span><b>you ›</b> Generate fix for issue #2</span>
+  </div>
+</body>
+</html>
