@@ -1,0 +1,14 @@
+# dependencies
+node_modules/
+
+# secrets: never commit real credentials (keep only .env.example)
+.env
+.env.*
+!.env.example
+
+# build output / tooling
+dist/
+dist-ssr/
+.vercel/
+*.log
+.DS_Store

@@ -1,0 +1,60 @@
+/* Ordo UI — Global styles (shares the landing page palette) */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  color-scheme: dark;
+  --bg: #07060a;
+  --bg-2: #0d0b13;
+  --surface: #0d0b13;
+  --surface2: #15131d;
+  --border: rgba(255, 255, 255, 0.1);
+  --line: rgba(255, 255, 255, 0.14);
+  --line-soft: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.28);
+  --glass: rgba(255, 255, 255, 0.045);
+  --text: #f4f3f7;
+  --ink-soft: #b9b6c2;
+  --muted: #8d8a97;
+  --accent: #5b9bff;
+  --accent-dim: rgba(91, 155, 255, 0.12);
+  --green: #6fe3b0;
+  --yellow: #ffc46b;
+  --red: #ff7a8a;
+  --orange: #ffa36b;
+  --purple: #8db8ff;
+  --pill: #f4f3f7;
+  --pill-ink: #0b0a0f;
+  --radius: 12px;
+  --radius-lg: 18px;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 14px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input, button, select, textarea {
+  outline: none;
+}
+a:focus-visible, button:focus-visible, [role="button"]:focus-visible { outline: 2px solid #8db8ff; outline-offset: 2px; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.12); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.22); }
