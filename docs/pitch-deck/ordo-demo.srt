@@ -1,56 +1,260 @@
 1
-00:00:00,600 --> 00:00:06,700
-Meet Ordo, the AI maintenance engineer for your codebase, built on IBM watsonx dot AI.
+00:00:00,566 --> 00:00:03,461
+Meet Ordo, the AI maintenance engineer for
 
 2
-00:00:08,900 --> 00:00:26,100
-Technical debt grows quietly. It piles up unseen, until it becomes an outage, slow delivery, or a security incident. Today's scanners produce long, noisy reports, ranked by rule severity, with no business context and no fix path. So the list gets ignored.
+00:00:03,481 --> 00:00:07,428
+your codebase, built on IBM watsonx.ai.
 
 3
-00:00:28,300 --> 00:00:41,500
-Ordo closes that gap in one pass. It analyzes a GitHub repository, ranks every finding by real risk, turns the list into a roadmap, and prepares the fix, the tests, and the pull request.
+00:00:09,399 --> 00:00:11,376
+Technical debt grows quietly.
 
 4
-00:00:43,700 --> 00:00:55,170
-The ranking is done by IBM Granite on watsonx dot AI. Every finding gets an urgency, business impact, and fix effort score, plus a plain English reason. Let's see it live.
+00:00:11,396 --> 00:00:13,047
+It piles up unseen,
 
 5
-00:00:57,167 --> 00:01:02,937
-This is Ordo's web app, running on Vercel. We'll scan a real project, Agora, straight from GitHub.
+00:00:13,067 --> 00:00:15,056
+until it becomes an outage,
 
 6
-00:01:06,700 --> 00:01:16,580
-I click Scan Repo Now and paste the repository link. While Bob streams the scan, Ordo reads the code through the GitHub API and runs five debt detectors.
+00:00:15,076 --> 00:00:18,342
+slow delivery, or a security incident.
 
 7
-00:01:20,767 --> 00:01:31,587
-Seconds later, the dashboard. Twenty findings, nineteen of them high urgency, each scored by the Granite model for urgency, impact, and effort, with its reasoning attached.
+00:00:18,362 --> 00:00:20,292
+Today's scanners produce long,
 
 8
-00:01:36,533 --> 00:01:44,363
-The overview breaks the debt down by category, shows repository stats, including zero test files, and lists the top issues.
+00:00:20,312 --> 00:00:23,357
+noisy reports, ranked by rule severity,
 
 9
-00:01:45,567 --> 00:01:51,877
-The roadmap is written by the model too. An overall assessment, then three phases the team can schedule.
+00:00:23,377 --> 00:00:26,236
+with no business context and no fix path.
 
 10
-00:01:54,100 --> 00:02:01,440
-Open any issue to drill in. Ask why it is ranked here, and watsonx explains its reasoning in plain English.
+00:00:26,256 --> 00:00:27,847
+So the list gets ignored.
 
 11
-00:02:02,467 --> 00:02:14,157
-Then generate the fix. Ordo returns a step by step remediation plan, code hints, a testing strategy, and a pull request summary, ready to copy straight into GitHub with one click.
+00:00:29,866 --> 00:00:32,389
+Ordo closes that gap in one pass.
 
 12
-00:02:18,200 --> 00:02:33,810
-The same engine runs inside IBM Bob, IBM's AI coding assistant. Ordo ships as a custom Bob mode with three skills, analyze repo, explain issue, and generate fix, so developers can do all of this from chat.
+00:00:32,409 --> 00:00:35,117
+It analyzes a GitHub repository,
 
 13
-00:02:34,700 --> 00:02:37,970
-And the full pitch deck is one click away, under Docs.
+00:00:35,137 --> 00:00:37,614
+ranks every finding by real risk,
 
 14
-00:02:40,900 --> 00:02:46,200
-Ordo turns software chaos into order. Try it today at ordowithbob.vercel.app.
+00:00:37,634 --> 00:00:39,599
+turns the list into a roadmap,
+
+15
+00:00:39,619 --> 00:00:40,864
+and prepares the fix,
+
+16
+00:00:40,884 --> 00:00:43,079
+the tests, and the pull request.
+
+17
+00:00:45,065 --> 00:00:47,076
+The ranking is done by IBM Granite on
+
+18
+00:00:47,096 --> 00:00:48,690
+watsonx.ai.
+
+19
+00:00:48,710 --> 00:00:50,536
+Every finding gets an urgency,
+
+20
+00:00:50,556 --> 00:00:51,569
+business impact,
+
+21
+00:00:51,589 --> 00:00:53,148
+and fix effort score,
+
+22
+00:00:53,168 --> 00:00:55,180
+plus a plain English reason.
+
+23
+00:00:55,200 --> 00:00:56,710
+Let's see it live.
+
+24
+00:00:58,499 --> 00:00:59,895
+This is Ordo's web app,
+
+25
+00:00:59,915 --> 00:01:01,195
+running on Vercel.
+
+26
+00:01:01,215 --> 00:01:02,658
+We'll scan a real project,
+
+27
+00:01:02,678 --> 00:01:04,908
+Agora, straight from GitHub.
+
+28
+00:01:08,066 --> 00:01:10,786
+I click Scan Repo Now and paste the repository
+
+29
+00:01:10,806 --> 00:01:11,576
+link.
+
+30
+00:01:11,596 --> 00:01:13,410
+While Bob streams the scan,
+
+31
+00:01:13,430 --> 00:01:16,266
+Ordo reads the code through the GitHub API and
+
+32
+00:01:16,286 --> 00:01:18,272
+runs five debt detectors.
+
+33
+00:01:22,099 --> 00:01:24,110
+Seconds later, the dashboard.
+
+34
+00:01:24,130 --> 00:01:25,399
+Twenty findings,
+
+35
+00:01:25,419 --> 00:01:27,709
+nineteen of them high urgency,
+
+36
+00:01:27,729 --> 00:01:30,380
+each scored by the Granite model for urgency,
+
+37
+00:01:30,400 --> 00:01:31,738
+impact, and effort,
+
+38
+00:01:31,758 --> 00:01:33,732
+with its reasoning attached.
+
+39
+00:01:37,865 --> 00:01:40,515
+The overview breaks the debt down by category,
+
+40
+00:01:40,535 --> 00:01:42,454
+shows repository stats,
+
+41
+00:01:42,474 --> 00:01:44,277
+including zero test files,
+
+42
+00:01:44,297 --> 00:01:46,120
+and lists the top issues.
+
+43
+00:01:46,899 --> 00:01:49,375
+The roadmap is written by the model too.
+
+44
+00:01:49,395 --> 00:01:50,930
+An overall assessment,
+
+45
+00:01:50,950 --> 00:01:53,540
+then three phases the team can schedule.
+
+46
+00:01:55,443 --> 00:01:57,362
+Open any issue to drill in.
+
+47
+00:01:57,382 --> 00:01:59,196
+Ask why it is ranked here,
+
+48
+00:01:59,216 --> 00:02:01,391
+and watsonx explains its reasoning in plain
+
+49
+00:02:01,411 --> 00:02:02,259
+English.
+
+50
+00:02:03,833 --> 00:02:05,799
+Then generate the fix.
+
+51
+00:02:05,819 --> 00:02:09,212
+Ordo returns a step by step remediation plan,
+
+52
+00:02:09,232 --> 00:02:11,453
+code hints, a testing strategy,
+
+53
+00:02:11,473 --> 00:02:13,206
+and a pull request summary,
+
+54
+00:02:13,226 --> 00:02:15,714
+ready to copy straight into GitHub with one
+
+55
+00:02:15,734 --> 00:02:16,605
+click.
+
+56
+00:02:19,566 --> 00:02:22,275
+The same engine runs inside IBM Bob,
+
+57
+00:02:22,295 --> 00:02:24,841
+IBM's AI coding assistant.
+
+58
+00:02:24,861 --> 00:02:27,314
+Ordo ships as a custom Bob mode with three
+
+59
+00:02:27,334 --> 00:02:29,728
+skills, analyze repo,
+
+60
+00:02:29,748 --> 00:02:32,178
+explain issue, and generate fix,
+
+61
+00:02:32,198 --> 00:02:34,741
+so developers can do all of this from chat.
+
+62
+00:02:35,432 --> 00:02:37,885
+And the full pitch deck is one click away,
+
+63
+00:02:37,905 --> 00:02:39,229
+under Docs.
+
+64
+00:02:41,643 --> 00:02:44,282
+Ordo turns software chaos into order.
+
+65
+00:02:44,302 --> 00:02:47,986
+Try it today at ordowithbob.vercel.app.
 
