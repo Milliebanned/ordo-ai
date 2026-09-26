@@ -12,3 +12,6 @@ dist-ssr/
 .vercel/
 *.log
 .DS_Store
+
+# local API keys (voice generation etc.)
+*.env

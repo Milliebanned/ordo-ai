@@ -1,22 +1,69 @@
 {
   "pitch": [
-    { "id": "s1", "slide": 1, "text": "Meet Ordo, the A.I. maintenance engineer for your codebase, built on I.B.M. watson x dot A.I." },
-    { "id": "s2", "slide": 2, "text": "Technical debt grows quietly. It piles up unseen, until it becomes an outage, slow delivery, or a security incident. Today's scanners produce long, noisy reports, ranked by rule severity, with no business context and no fix path. So the list gets ignored." },
-    { "id": "s4", "slide": 4, "text": "Ordo closes that gap in one pass. It analyzes a GitHub repository, ranks every finding by real risk, turns the list into a roadmap, and prepares the fix, the tests, and the pull request." },
-    { "id": "s6", "slide": 6, "text": "The ranking is done by I.B.M. Granite on watson x dot A.I. Every finding gets an urgency, business impact, and fix effort score, plus a plain English reason. Let's see it live." }
+    {
+      "id": "s1",
+      "slide": 1,
+      "text": "Meet Ordo, the AI maintenance engineer for your codebase, built on IBM watsonx dot AI."
+    },
+    {
+      "id": "s2",
+      "slide": 2,
+      "text": "Technical debt grows quietly. It piles up unseen, until it becomes an outage, slow delivery, or a security incident. Today's scanners produce long, noisy reports, ranked by rule severity, with no business context and no fix path. So the list gets ignored."
+    },
+    {
+      "id": "s4",
+      "slide": 4,
+      "text": "Ordo closes that gap in one pass. It analyzes a GitHub repository, ranks every finding by real risk, turns the list into a roadmap, and prepares the fix, the tests, and the pull request."
+    },
+    {
+      "id": "s6",
+      "slide": 6,
+      "text": "The ranking is done by IBM Granite on watsonx dot AI. Every finding gets an urgency, business impact, and fix effort score, plus a plain English reason. Let's see it live."
+    }
   ],
   "demo": [
-    { "id": "d1", "text": "This is Ordo's web app, running on Vercel. We'll scan a real project, Agora, straight from GitHub." },
-    { "id": "d2", "text": "I click Scan Repo Now and paste the repository link. While Bob streams the scan, Ordo reads the code through the GitHub A.P.I. and runs five debt detectors." },
-    { "id": "d3", "text": "Seconds later, the dashboard. Twenty findings, nineteen of them high urgency, each scored by the Granite model for urgency, impact, and effort, with its reasoning attached." },
-    { "id": "d4", "text": "The overview breaks the debt down by category, shows repository stats, including zero test files, and lists the top issues." },
-    { "id": "d5", "text": "The roadmap is written by the model too. An overall assessment, then three phases the team can schedule." },
-    { "id": "d6", "text": "Open any issue to drill in. Ask why it is ranked here, and watson x explains its reasoning in plain English." },
-    { "id": "d7", "text": "Then generate the fix. Ordo returns a step by step remediation plan, code hints, a testing strategy, and a pull request summary, ready to copy straight into GitHub with one click." },
-    { "id": "d8", "text": "The same engine runs inside I.B.M. Bob, I.B.M.'s A.I. coding assistant. Ordo ships as a custom Bob mode with three skills, analyze repo, explain issue, and generate fix, so developers can do all of this from chat." },
-    { "id": "d9", "text": "And the full pitch deck is one click away, under Docs." }
+    {
+      "id": "d1",
+      "text": "This is Ordo's web app, running on Vercel. We'll scan a real project, Agora, straight from GitHub."
+    },
+    {
+      "id": "d2",
+      "text": "I click Scan Repo Now and paste the repository link. While Bob streams the scan, Ordo reads the code through the GitHub API and runs five debt detectors."
+    },
+    {
+      "id": "d3",
+      "text": "Seconds later, the dashboard. Twenty findings, nineteen of them high urgency, each scored by the Granite model for urgency, impact, and effort, with its reasoning attached."
+    },
+    {
+      "id": "d4",
+      "text": "The overview breaks the debt down by category, shows repository stats, including zero test files, and lists the top issues."
+    },
+    {
+      "id": "d5",
+      "text": "The roadmap is written by the model too. An overall assessment, then three phases the team can schedule."
+    },
+    {
+      "id": "d6",
+      "text": "Open any issue to drill in. Ask why it is ranked here, and watsonx explains its reasoning in plain English."
+    },
+    {
+      "id": "d7",
+      "text": "Then generate the fix. Ordo returns a step by step remediation plan, code hints, a testing strategy, and a pull request summary, ready to copy straight into GitHub with one click."
+    },
+    {
+      "id": "d8",
+      "text": "The same engine runs inside IBM Bob, IBM's AI coding assistant. Ordo ships as a custom Bob mode with three skills, analyze repo, explain issue, and generate fix, so developers can do all of this from chat."
+    },
+    {
+      "id": "d9",
+      "text": "And the full pitch deck is one click away, under Docs."
+    }
   ],
   "close": [
-    { "id": "s14", "slide": 14, "text": "Ordo turns software chaos into order. Try it today at ordo with bob dot vercel dot app." }
+    {
+      "id": "s14",
+      "slide": 14,
+      "text": "Ordo turns software chaos into order. Try it today at ordo with bob dot vercel dot app."
+    }
   ]
 }
