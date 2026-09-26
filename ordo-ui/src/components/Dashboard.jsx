@@ -22,7 +22,7 @@ export default function Dashboard({ analysis, roadmap, onReset }) {
     <div className="dashboard">
       {/* Header */}
       <header className="dash-header">
-        <div className="dash-logo">ORDO</div>
+        <div className="dash-logo"><img src="/ordo-logo.png" alt="Ordo" width="1077" height="386" /></div>
 
         <div className="dash-meta">
           <a href={metadata.url} target="_blank" rel="noreferrer">{metadata.fullName}</a>

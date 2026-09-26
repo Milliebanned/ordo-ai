@@ -59,7 +59,7 @@ export default function App() {
     <div className="landing">
       <header className="landing-header">
         <div className="logo">
-          <span>ORDO</span>
+          <img src="/ordo-logo.png" alt="Ordo" width="1077" height="386" />
         </div>
         <p className="tagline">AI Maintenance Engineer</p>
         <p className="sub-tagline">Identify technical debt, prioritize issues, and generate remediation plans — before problems become expensive.</p>

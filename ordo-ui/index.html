@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ordo</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/ordo-icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/ordo-icon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#07060a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -62,7 +67,8 @@
     backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
     box-shadow: 0 1px 0 rgba(255,255,255,.06) inset, 0 20px 40px -20px rgba(0,0,0,.8);
   }
-  .logo { font-size: clamp(12px, 1.05vw, 15px); font-weight: 400; letter-spacing: .34em; color: var(--ink); text-decoration: none; }
+  .logo { font-size: clamp(12px, 1.05vw, 15px); font-weight: 400; letter-spacing: .34em; color: var(--ink); text-decoration: none; justify-self: start; }
+  .logo img { display: block; height: clamp(24px, 2.2vw, 34px); width: auto; }
   .links { display: flex; align-items: center; gap: clamp(2px, .6vw, 10px); list-style: none; margin: 0; padding: 0; }
   .links a {
     display: block; padding: clamp(6px, .7vw, 10px) clamp(10px, 1.1vw, 18px);
@@ -259,6 +265,7 @@
   @media (max-width: 860px) {
     .nav { grid-template-columns: 1fr auto; }
     .links { display: none; }
+    .nav > nav { display: none; }
     .hero { grid-template-columns: 1fr; min-height: 600px; align-content: center; padding-top: 40px; }
     .copy { padding-left: 0; grid-area: 1 / 1; }
     .orb-wrap { grid-area: 1 / 1; width: min(135%, 620px); justify-self: center; align-self: center; opacity: .5; pointer-events: none; }
@@ -286,7 +293,7 @@
 <div class="wrap">
   <div class="top">
     <header class="nav">
-      <a class="logo" href="#home">ORDO</a>
+      <a class="logo" href="#home"><img src="/ordo-logo.png" alt="Ordo" width="1077" height="386"></a>
       <nav aria-label="Primary">
         <ul class="links">
           <li><a href="#home" aria-current="page">Home</a></li>
