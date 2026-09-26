@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ordo · Pitch Deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Same tokens as the Ordo landing page */
+  :root {
+    --bg: #07060a; --bg-2: #0d0b13;
+    --ink: #f4f3f7; --ink-soft: #b9b6c2; --ink-dim: #8d8a97;
+    --line: rgba(255,255,255,.14); --line-soft: rgba(255,255,255,.08);
+    --blue: #5b9bff; --crit: #ff7a8a; --warn: #ffc46b; --ok: #6fe3b0;
+    --font: "Inter", system-ui, sans-serif; --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  @page { size: 1920px 1080px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--ink); font-family: var(--font); -webkit-font-smoothing: antialiased; }
+  .slide {
+    position: relative; width: 1920px; height: 1080px; overflow: hidden; isolation: isolate;
+    padding: 110px 130px 120px; page-break-after: always; break-after: page;
+    background: var(--bg);
+  }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
+  .slide::before {
+    content: ""; position: absolute; left: -4%; top: -260px; width: 52%; height: 620px; z-index: -1;
+    background: radial-gradient(closest-side, rgba(37,99,235,.30), rgba(37,99,235,.12) 45%, rgba(37,99,235,0));
+  }
+  .glow-r::after {
+    content: ""; position: absolute; right: -6%; top: 18%; width: 48%; aspect-ratio: 1; z-index: -1;
+    background: radial-gradient(closest-side, rgba(37,99,235,.18), rgba(37,99,235,0));
+  }
+  .foot {
+    position: absolute; left: 130px; right: 130px; bottom: 54px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 18px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-dim);
+  }
+  .foot img { height: 30px; display: block; }
+  .kicker { font-family: var(--mono); font-size: 22px; letter-spacing: .16em; text-transform: uppercase; color: var(--blue); margin-bottom: 30px; }
+  h1 { font-size: 104px; line-height: 1.12; font-weight: 400; letter-spacing: -.02em; }
+  h2 { font-size: 72px; line-height: 1.15; font-weight: 400; letter-spacing: -.015em; max-width: 18em; }
+  .lede { margin-top: 36px; font-size: 32px; line-height: 1.6; font-weight: 300; color: var(--ink-soft); max-width: 30em; }
+  .mono { font-family: var(--mono); }
+  .soft { color: var(--ink-soft); }
+  .blue { color: var(--blue); }
+
+  /* glass card, as on the landing page */
+  .glass {
+    border: 1px solid var(--line); border-radius: 28px;
+    background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.015));
+    box-shadow: 0 1px 0 rgba(255,255,255,.06) inset, 0 30px 60px -30px rgba(0,0,0,.9);
+  }
+  /* the landing page's blue scan card */
+  .scan {
+    border-radius: 28px; border: 1px solid rgba(140,180,255,.28);
+    background:
+      linear-gradient(rgba(91,155,255,.07) 1px, transparent 1px) 0 0 / 100% 34px,
+      linear-gradient(90deg, rgba(91,155,255,.07) 1px, transparent 1px) 0 0 / 34px 100%,
+      linear-gradient(155deg, #16264d 0%, #0d1530 55%, #0a0f22 100%);
+    box-shadow: 0 1px 0 rgba(255,255,255,.16) inset, 0 40px 70px -30px rgba(0,0,0,.9);
+  }
+  .shot { display: block; border-radius: 22px; border: 1px solid var(--line); box-shadow: 0 50px 90px -40px rgba(0,0,0,.95), 0 0 0 1px rgba(5,8,20,.9); }
+  .pill { display: inline-block; font-size: 20px; padding: 4px 16px; border-radius: 999px; border: 1.5px solid currentColor; }
+
+  /* grids */
+  .cols3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 70px; }
+  .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .card { padding: 44px 42px; }
+  .card .n { font-family: var(--mono); font-size: 22px; color: var(--blue); }
+  .card h3 { margin: 22px 0 16px; font-size: 38px; font-weight: 400; line-height: 1.25; }
+  .card p { font-size: 25px; line-height: 1.6; font-weight: 300; color: var(--ink-soft); }
+
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 80px; border-top: 1px solid var(--line); }
+  .steps > div { padding: 40px 34px 0 0; }
+  .steps > div + div { padding-left: 34px; border-left: 1px solid var(--line-soft); }
+  .steps .n { font-family: var(--mono); font-size: 22px; color: var(--blue); }
+  .steps h3 { margin: 22px 0 14px; font-size: 40px; font-weight: 400; }
+  .steps p { font-size: 25px; line-height: 1.6; font-weight: 300; color: var(--ink-soft); }
+
+  .list { list-style: none; margin-top: 44px; border-top: 1px solid var(--line-soft); }
+  .list li { display: flex; justify-content: space-between; align-items: baseline; gap: 30px; padding: 22px 0; border-bottom: 1px solid var(--line-soft); font-size: 30px; }
+  .list li span { font-family: var(--mono); font-size: 20px; color: var(--ink-dim); text-align: right; }
+
+  .flow { display: flex; align-items: center; gap: 22px; margin-top: 80px; }
+  .flow .box { flex: 1; padding: 34px 30px; text-align: left; }
+  .flow .box .mono { font-size: 19px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-dim); }
+  .flow .box h3 { margin-top: 14px; font-size: 32px; font-weight: 400; line-height: 1.3; }
+  .flow .arrow { flex: none; width: 44px; height: 44px; color: var(--ink-dim); }
+  .flow .box.bad { border-color: rgba(255,122,138,.4); }
+  .flow .box.bad .mono { color: var(--crit); }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 64px; }
+  .stat { padding: 38px 36px; }
+  .stat b { display: block; font-size: 96px; font-weight: 300; line-height: 1; letter-spacing: -.03em; }
+  .stat span { display: block; margin-top: 18px; font-family: var(--mono); font-size: 19px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-dim); }
+
+  table { width: 100%; border-collapse: collapse; margin-top: 60px; font-size: 27px; }
+  th, td { text-align: left; padding: 24px 28px; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+  th { font-family: var(--mono); font-size: 19px; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-dim); }
+  td:first-child { color: var(--ink-dim); font-family: var(--mono); font-size: 21px; letter-spacing: .06em; text-transform: uppercase; width: 20%; }
+  td.us { color: var(--ink); background: rgba(91,155,255,.06); }
+  td.them { color: var(--ink-soft); font-weight: 300; }
+  th.us { color: var(--blue); background: rgba(91,155,255,.06); }
+
+  .arch { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 70px; align-items: stretch; }
+  .arch .node { padding: 34px 28px; position: relative; }
+  .arch .node + .node::before { content: ""; position: absolute; left: -20px; top: 50%; width: 20px; height: 2px; background: var(--blue); opacity: .6; }
+  .arch .node .mono { font-size: 18px; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); }
+  .arch .node h3 { margin: 14px 0 12px; font-size: 32px; font-weight: 400; }
+  .arch .node p { font-size: 22px; line-height: 1.55; font-weight: 300; color: var(--ink-soft); }
+
+  .chat { margin-top: 40px; padding: 34px 40px; font-family: var(--mono); font-size: 24px; line-height: 2; color: var(--ink-soft); }
+  .chat b { color: var(--blue); font-weight: 400; }
+</style>
+</head>
+<body>
+
+<!-- 1 · Cover -->
+<section class="slide glow-r">
+  <img src="ordo-logo.png" alt="Ordo" style="height:64px">
+  <h1 style="margin-top:150px; max-width:9em; font-size:92px">The AI maintenance engineer for your codebase.</h1>
+  <p class="lede" style="max-width:24em">Ordo reads a repository, ranks what matters most, and hands the team fix plans, test strategies and pull request summaries.</p>
+  <div style="position:absolute; right:40px; top:150px; width:900px; height:760px; background:url(shots/hero.jpg) 88% 58% / 2050px auto no-repeat; -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); mask-image: radial-gradient(closest-side, #000 72%, transparent 100%);"></div>
+  <div class="foot"><span>Pitch deck · 2026</span><span>Built on IBM watsonx.ai</span></div>
+</section>
+
+<!-- 2 · Problem -->
+<section class="slide">
+  <p class="kicker">The problem</p>
+  <h2>Technical debt grows quietly, until it doesn't.</h2>
+  <div class="cols3">
+    <div class="glass card"><div class="n">01 · Invisible</div><h3>Nobody sees it pile up</h3><p>Debt accumulates in code no one is looking at. It surfaces as outages, slow delivery or security incidents, when fixing it costs the most.</p></div>
+    <div class="glass card"><div class="n">02 · Noisy</div><h3>Reports without priorities</h3><p>Scanners and linters produce long lists ranked by rule severity, with no sense of business risk or what to do first.</p></div>
+    <div class="glass card"><div class="n">03 · Not actionable</div><h3>Flagged lines, no fix path</h3><p>Engineers get findings they cannot act on: no explanation, no plan, no tests, no pull request. So the list gets ignored.</p></div>
+  </div>
+  <div class="foot"><img src="ordo-logo.png" alt=""><span>02</span></div>
+</section>
+
+<!-- 3 · Status quo -->
+<section class="slide">
+  <p class="kicker">How it goes today</p>
+  <h2>Findings go in. Very little comes out.</h2>
+  <div class="flow">
+    <div class="glass box"><div class="mono">Step 1</div><h3>A scanner produces a long report</h3></div>
+    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+    <div class="glass box"><div class="mono">Step 2</div><h3>Someone triages it by hand</h3></div>
+    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+    <div class="glass box"><div class="mono">Step 3</div><h3>Items sink to the bottom of the backlog</h3></div>
+    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+    <div class="glass box bad"><div class="mono">Step 4</div><h3>The worst one ships to production</h3></div>
+  </div>
+  <p class="lede" style="margin-top:80px">The gap is not detection. It is <span style="color:var(--ink)">prioritization</span>, <span style="color:var(--ink)">explanation</span> and a <span style="color:var(--ink)">fix path</span> an engineer can pick up and ship.</p>
+  <div class="foot"><img src="ordo-logo.png" alt=""><span>03</span></div>
+</section>
+
+<!-- 4 · Solution -->
+<section class="slide">
+  <p class="kicker">The solution</p>
+  <h2>Ordo: from discovery to execution, in one pass.</h2>
+  <div class="steps">
+    <div><span class="n">01</span><h3>Analyze</h3><p>Reads the repository from GitHub: code, dependencies, structure and tests. No cloning, no setup.</p></div>
+    <div><span class="n">02</span><h3>Prioritize</h3><p>Scores every finding for urgency, business impact and fix effort, with a plain-English reason.</p></div>
+    <div><span class="n">03</span><h3>Roadmap</h3><p>Sequences the ranked list into a three-phase maintenance plan the team can schedule.</p></div>
+    <div><span class="n">04</span><h3>Remediate</h3><p>Prepares the fix plan, the test strategy and a pull request summary, ready to implement.</p></div>
+  </div>
+  <div class="foot"><img src="ordo-logo.png" alt=""><span>04</span></div>
+</section>
+
+<!-- 5 · What Ordo finds -->
+<section class="slide">
+  <div class="cols2" style="grid-template-columns: 1fr 1.05fr; align-items:start">
+    <div>
+      <p class="kicker">What Ordo finds</p>
+      <h2 style="font-size:64px">Five categories of debt that quietly raise costs.</h2>
+      <ul class="list">
+        <li>Hardcoded secrets<span>keys, tokens, passwords</span></li>
+        <li>Complex functions<span>length, nesting depth</span></li>
+        <li>Thin test coverage<span>untested source files</span></li>
+        <li>Outdated dependencies<span>loose or stale versions</span></li>
+        <li>Undocumented APIs<span>exports without docs</span></li>
+      </ul>
+    </div>
+    <img class="shot" src="shots/finds.jpg" alt="" style="width:100%; border:0; box-shadow:none; margin-top:40px">
+  </div>
+  <div class="foot"><img src="ordo-logo.png" alt=""><span>05</span></div>
+</section>
+
+<!-- 6 · Prioritization -->
+<section class="slide">
+  <p class="kicker">How it prioritizes</p>
+  <h2>Every finding is ranked by risk, not by rule.</h2>
+  <div class="cols3" style="margin-top:60px">
+    <div class="scan card"><div class="n" style="color:var(--crit)">Urgency · 1–10</div><h3>How soon it needs fixing</h3><p>Security and reliability risks rise to the top.</p></div>
+    <div class="scan card"><div class="n" style="color:var(--warn)">Business impact · 1–10</div><h3>What it costs if ignored</h3><p>Weighs the damage to users, delivery and trust.</p></div>
+    <div class="scan card"><div class="n" style="color:var(--ok)">Fix effort · 1–10</div><h3>What it takes to fix</h3><p>Surfaces the quick wins next to the big jobs.</p></div>
+  </div>
+  <p class="lede" style="margin-top:60px">Scored by IBM Granite on <span style="color:var(--ink)">watsonx.ai</span>, with a one-line explanation for each finding. If the model is unavailable, Ordo falls back to rule-based scores, so a scan never fails.</p>
+  <div class="foot"><img src="ordo-logo.png" alt=""><span>06</span></div>
+</section>
+
+<!-- 7 · Proof: live scan -->
+<section class="slide">
+  <p class="kicker">Real scan · expressjs/express</p>
+  <h2>One of the most-used Node.js frameworks, scanned in minutes.</h2>
+  <div class="stats">
+    <div class="glass stat"><b>74</b><span>Files analyzed of 214</span></div>
+    <div class="glass stat"><b>16</b><span>Findings ranked</span></div>
+    <div class="glass stat"><b style="color:var(--crit)">15</b><span>High urgency</span></div>
+    <div class="glass stat"><b>3</b><span>Phase roadmap</span></div>
+  </div>
+  <table style="margin-top:56px">
+    <tr><th>Top finding</th><th>Where</th><th>Urgency</th></tr>
+    <tr><td style="color:var(--crit)">Hardcoded secret</td><td class="mono" style="font-size:24px">examples/session/redis.js</td><td class="mono" style="color:var(--crit)">9 / 10</td></tr>
+    <tr><td style="color:#ffa36b">Complex function</td><td class="mono" style="font-size:24px">test/Router.js</td><td class="mono">8 / 10</td></tr>
+    <tr><td style="color:var(--warn)">Thin test coverage</td><td class="mono" style="font-size:24px">index.js</td><td class="mono">8 / 10</td></tr>
+  </table>
+  <div class="foot"><img src="ordo-logo.png" alt=""><span>Scan run Sep 2026 · AI-enriched · 07</span></div>
+</section>
+
+<!-- 8 · Dashboard -->
+<section class="slide" style="padding-top:90px">
+  <p class="kicker">The product</p>
+  <h2 style="font-size:60px">A ranked dashboard, not a wall of warnings.</h2>
+  <img class="shot" src="shots/dashboard.jpg" alt="" style="width:1120px; position:absolute; left:400px; top:300px">
+  <div class="foot" style="z-index:2"><img src="ordo-logo.png" alt=""><span>08</span></div>
+</section>
+
+<!-- 9 · Roadmap -->
+<section class="slide">
+  <div class="cols2" style="grid-template-columns: .8fr 1.2fr">
+    <div>
+      <p class="kicker">The roadmap</p>
+      <h2 style="font-size:64px">A maintenance plan the team can schedule.</h2>
+      <p class="lede" style="font-size:28px">Ordo sequences the findings into three phases, from fix-now security and reliability issues to longer-term code quality, with the reasoning written out for each phase.</p>
+    </div>
+    <img class="shot" src="shots/roadmap.jpg" alt="" style="width:100%">
+  </div>
+  <div class="foot"><img src="ordo-logo.png" alt=""><span>09</span></div>
+</section>
+
+<!-- 10 · Deliverables -->
+<section class="slide">
+  <div class="cols2" style="grid-template-columns: .95fr 1.05fr; gap:70px">
+    <div>
+      <p class="kicker">Deliverables</p>
+      <h2 style="font-size:64px">Not just a report. A plan you can ship.</h2>
+      <ul class="list" style="margin-top:50px">
+        <li>Remediation plan<span>step by step, with code hints</span></li>
+        <li>Test strategy<span>what to verify and how</span></li>
+        <li>Pull request summary<span>copy straight into GitHub</span></li>
+      </ul>
+    </div>
+    <div style="position:relative; height:800px">
+      <img class="shot" src="shots/fixplan.jpg" alt="" style="position:absolute; left:0; top:0; width:500px">
+      <img class="shot" src="shots/prsummary.jpg" alt="" style="position:absolute; right:0; top:120px; width:500px">
+    </div>
+  </div>
+  <div class="foot"><img src="ordo-logo.png" alt=""><span>Generated from the real express scan · 10</span></div>
+</section>
+
+<!-- 11 · Experience -->
+<section class="slide">
+  <div class="cols2" style="grid-template-columns: 1fr 1fr">
+    <div>
+      <p class="kicker">The experience</p>
+      <h2 style="font-size:64px">Paste a URL. Watch Bob work.</h2>
+      <p class="lede" style="font-size:28px">Bob, Ordo's hard-hat mascot, streams the scan as it runs, then hands the team a dashboard. Every finding leaves as a work order, stamped ready for review.</p>
+    </div>
+    <img class="shot" src="shots/scanlog.jpg" alt="" style="width:640px; justify-self:center">
+  </div>
+  <div class="foot"><img src="ordo-logo.png" alt=""><span>11</span></div>
+</section>
+
+<!-- 12 · Architecture -->
+<section class="slide">
+  <p class="kicker">Under the hood</p>
+  <h2>Simple pipeline. AI where it counts.</h2>
+  <div class="arch">
+    <div class="glass node"><div class="mono">Ingest</div><h3>GitHub API</h3><p>File tree and key files, fetched without cloning.</p></div>
+    <div class="glass node"><div class="mono">Detect</div><h3>5 detectors</h3><p>Rule-based checks for each debt category.</p></div>
+    <div class="scan node"><div class="mono">Reason</div><h3>watsonx.ai</h3><p>IBM Granite scores, explains and plans.</p></div>
+    <div class="glass node"><div class="mono">Plan</div><h3>Roadmap + fixes</h3><p>Phases, remediation, tests, PR summary.</p></div>
+    <div class="glass node"><div class="mono">Deliver</div><h3>Web app + Bob</h3><p>Dashboard on the web, chat inside IBM Bob.</p></div>
+  </div>
+  <div class="glass chat"><b>you ›</b> Analyze https://github.com/expressjs/express<br><b>you ›</b> Explain issue #3<br><b>you ›</b> Generate fix for issue #2</div>
+  <div class="foot"><img src="ordo-logo.png" alt=""><span>Also a first-class IBM Bob mode · 12</span></div>
+</section>
+
+<!-- 13 · Difference -->
+<section class="slide">
+  <p class="kicker">Why Ordo</p>
+  <h2>From a list of problems to a plan of action.</h2>
+  <table>
+    <tr><th></th><th>Typical static-analysis report</th><th class="us">Ordo</th></tr>
+    <tr><td>Output</td><td class="them">A long list of findings</td><td class="us">A ranked list and a roadmap</td></tr>
+    <tr><td>Priority</td><td class="them">Rule severity</td><td class="us">Urgency, business impact and effort</td></tr>
+    <tr><td>Explanation</td><td class="them">Rule identifier</td><td class="us">Plain-English reasoning per finding</td></tr>
+    <tr><td>Fix path</td><td class="them">Left to the engineer</td><td class="us">Fix plan, test strategy, PR summary</td></tr>
+    <tr><td>Interface</td><td class="them">Report file</td><td class="us">Web dashboard and IBM Bob chat</td></tr>
+  </table>
+  <div class="foot"><img src="ordo-logo.png" alt=""><span>13</span></div>
+</section>
+
+<!-- 14 · Close -->
+<section class="slide glow-r">
+  <img src="ordo-logo.png" alt="Ordo" style="height:64px">
+  <h1 style="margin-top:80px; max-width:10em">Transform software chaos into order.</h1>
+  <p class="lede">Cut maintenance costs, raise code quality, and stop small issues from becoming production problems.</p>
+  <div class="glass" style="display:inline-flex; align-items:center; gap:22px; margin-top:52px; padding:26px 38px; font-size:30px">
+    <span class="mono blue" style="font-size:20px; letter-spacing:.14em; text-transform:uppercase">Try it</span>
+    <span class="mono">ordo-two-nu.vercel.app</span>
+  </div>
+  <div class="glass" style="margin-top:28px; padding:28px 38px; max-width:1100px">
+    <span class="mono soft" style="font-size:20px; letter-spacing:.12em; text-transform:uppercase">Next</span>
+    <p style="margin-top:12px; font-size:26px; font-weight:300; color:var(--ink-soft); line-height:1.6">Automatic pull requests · CI integration · multi-repo view · debt trends over time · IDE plugin</p>
+  </div>
+  <div class="foot"><span>Ordo · AI maintenance engineer</span><span>14</span></div>
+</section>
+
+</body>
+</html>
