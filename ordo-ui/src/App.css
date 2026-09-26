@@ -677,7 +677,7 @@
   background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
   box-shadow: 0 1px 0 rgba(255,255,255,.06) inset, 0 20px 40px -20px rgba(0,0,0,.8);
 }
-.landing .repo-input { font-family: var(--mono); font-size: 13.5px; padding: 10px 0; }
+.landing .repo-input { font-family: var(--mono); font-size: 13.5px; padding: 10px 0; font-variant-ligatures: none; }
 .landing .analyze-btn { background: var(--pill); color: var(--pill-ink); border-radius: var(--radius); padding: 11px 24px; font-weight: 500; }
 .landing .analyze-btn:not(:disabled):hover { opacity: 1; background: #fff; }
 .landing .loading-state { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; }

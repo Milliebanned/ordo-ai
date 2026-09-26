@@ -121,9 +121,9 @@
 <section class="slide glow-r">
   <img src="ordo-logo.png" alt="Ordo" style="height:64px">
   <h1 style="margin-top:150px; max-width:9em; font-size:92px">The AI maintenance engineer for your codebase.</h1>
-  <p class="lede" style="max-width:24em">Ordo reads a repository, ranks what matters most, and hands the team fix plans, test strategies and pull request summaries.</p>
+  <p class="lede" style="max-width:24em">Built on IBM Bob 2.0, Ordo scans a repository, ranks what matters most, and hands the team fix plans, test strategies and pull request summaries.</p>
   <div style="position:absolute; right:40px; top:150px; width:900px; height:760px; background:url(shots/hero.jpg) 88% 58% / 2050px auto no-repeat; -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); mask-image: radial-gradient(closest-side, #000 72%, transparent 100%);"></div>
-  <div class="foot"><span>Pitch deck · 2026</span><span>Built on IBM watsonx.ai</span></div>
+  <div class="foot"><span>Pitch deck · 2026</span><span>Built on IBM Bob 2.0 · assisted by watsonx.ai</span></div>
 </section>
 
 <!-- 2 · Problem -->
@@ -158,12 +158,12 @@
 <!-- 4 · Solution -->
 <section class="slide">
   <p class="kicker">The solution</p>
-  <h2>Ordo: from discovery to execution, in one pass.</h2>
+  <h2>Ordo, built on IBM Bob 2.0: from discovery to execution, in one pass.</h2>
   <div class="steps">
-    <div><span class="n">01</span><h3>Analyze</h3><p>Reads the repository from GitHub: code, dependencies, structure and tests. No cloning, no setup.</p></div>
-    <div><span class="n">02</span><h3>Prioritize</h3><p>Scores every finding for urgency, business impact and fix effort, with a plain-English reason.</p></div>
-    <div><span class="n">03</span><h3>Roadmap</h3><p>Sequences the ranked list into a three-phase maintenance plan the team can schedule.</p></div>
-    <div><span class="n">04</span><h3>Remediate</h3><p>Prepares the fix plan, the test strategy and a pull request summary, ready to implement.</p></div>
+    <div><span class="n">01</span><h3>Analyze</h3><p>Bob reads the repository from GitHub and runs five debt detectors. No cloning, no setup.</p></div>
+    <div><span class="n">02</span><h3>Prioritize</h3><p>Bob scores every finding for urgency, business impact and fix effort, with a plain-English reason.</p></div>
+    <div><span class="n">03</span><h3>Roadmap</h3><p>Bob sequences the ranked list into a three-phase plan the team can schedule.</p></div>
+    <div><span class="n">04</span><h3>Remediate</h3><p>Bob prepares the fix plan, the test strategy and a pull request summary, ready to implement.</p></div>
   </div>
   <div class="foot"><img src="ordo-logo.png" alt=""><span>04</span></div>
 </section>
@@ -172,7 +172,7 @@
 <section class="slide">
   <div class="cols2" style="grid-template-columns: 1fr 1.05fr; align-items:start">
     <div>
-      <p class="kicker">What Ordo finds</p>
+      <p class="kicker">What Bob finds</p>
       <h2 style="font-size:64px">Five categories of debt that quietly raise costs.</h2>
       <ul class="list">
         <li>Hardcoded secrets<span>keys, tokens, passwords</span></li>
@@ -189,21 +189,21 @@
 
 <!-- 6 · Prioritization -->
 <section class="slide">
-  <p class="kicker">How it prioritizes</p>
+  <p class="kicker">How Bob prioritizes</p>
   <h2>Every finding is ranked by risk, not by rule.</h2>
   <div class="cols3" style="margin-top:60px">
     <div class="scan card"><div class="n" style="color:var(--crit)">Urgency · 1–10</div><h3>How soon it needs fixing</h3><p>Security and reliability risks rise to the top.</p></div>
     <div class="scan card"><div class="n" style="color:var(--warn)">Business impact · 1–10</div><h3>What it costs if ignored</h3><p>Weighs the damage to users, delivery and trust.</p></div>
     <div class="scan card"><div class="n" style="color:var(--ok)">Fix effort · 1–10</div><h3>What it takes to fix</h3><p>Surfaces the quick wins next to the big jobs.</p></div>
   </div>
-  <p class="lede" style="margin-top:60px">Scored by IBM Granite on <span style="color:var(--ink)">watsonx.ai</span>, with a one-line explanation for each finding. If the model is unavailable, Ordo falls back to rule-based scores, so a scan never fails.</p>
+  <p class="lede" style="margin-top:60px"><span style="color:var(--ink)">IBM Bob 2.0</span> runs the analysis and does the ranking. IBM Granite on watsonx.ai assists Bob with scoring and a one-line explanation for each finding. If the model is unavailable, Bob falls back to rule-based scores, so a scan never fails.</p>
   <div class="foot"><img src="ordo-logo.png" alt=""><span>06</span></div>
 </section>
 
 <!-- 7 · Proof: live scan -->
 <section class="slide">
   <p class="kicker">Real scan · expressjs/express</p>
-  <h2>One of the most-used Node.js frameworks, scanned in minutes.</h2>
+  <h2>Bob scanned one of the most-used Node.js frameworks in minutes.</h2>
   <div class="stats">
     <div class="glass stat"><b>74</b><span>Files analyzed of 214</span></div>
     <div class="glass stat"><b>16</b><span>Findings ranked</span></div>
@@ -266,7 +266,7 @@
     <div>
       <p class="kicker">The experience</p>
       <h2 style="font-size:64px">Paste a URL. Watch Bob work.</h2>
-      <p class="lede" style="font-size:28px">Bob, Ordo's hard-hat mascot, streams the scan as it runs, then hands the team a dashboard. Every finding leaves as a work order, stamped ready for review.</p>
+      <p class="lede" style="font-size:28px">Bob, the face of IBM Bob 2.0 inside Ordo, streams the scan as it runs, then hands the team a dashboard. Every finding leaves as a work order, stamped ready for review.</p>
     </div>
     <img class="shot" src="shots/scanlog.jpg" alt="" style="width:640px; justify-self:center">
   </div>
@@ -276,16 +276,16 @@
 <!-- 12 · Architecture -->
 <section class="slide">
   <p class="kicker">Under the hood</p>
-  <h2>Simple pipeline. AI where it counts.</h2>
+  <h2>IBM Bob 2.0 does the work. watsonx.ai assists.</h2>
   <div class="arch">
-    <div class="glass node"><div class="mono">Ingest</div><h3>GitHub API</h3><p>File tree and key files, fetched without cloning.</p></div>
-    <div class="glass node"><div class="mono">Detect</div><h3>5 detectors</h3><p>Rule-based checks for each debt category.</p></div>
-    <div class="scan node"><div class="mono">Reason</div><h3>watsonx.ai</h3><p>IBM Granite scores, explains and plans.</p></div>
-    <div class="glass node"><div class="mono">Plan</div><h3>Roadmap + fixes</h3><p>Phases, remediation, tests, PR summary.</p></div>
-    <div class="glass node"><div class="mono">Deliver</div><h3>Web app + Bob</h3><p>Dashboard on the web, chat inside IBM Bob.</p></div>
+    <div class="scan node"><div class="mono">Engine</div><h3>IBM Bob 2.0</h3><p>Ordo runs as a custom Bob mode with three skills.</p></div>
+    <div class="glass node"><div class="mono">Ingest</div><h3>analyze-repo</h3><p>Bob pulls the file tree and key files from GitHub.</p></div>
+    <div class="glass node"><div class="mono">Detect</div><h3>5 detectors</h3><p>Bob checks each debt category against the code.</p></div>
+    <div class="glass node"><div class="mono">Assist</div><h3>watsonx.ai</h3><p>IBM Granite helps Bob score, explain and write fixes.</p></div>
+    <div class="glass node"><div class="mono">Deliver</div><h3>Web app + chat</h3><p>Dashboard on the web, chat inside IBM Bob.</p></div>
   </div>
   <div class="glass chat"><b>you ›</b> Analyze https://github.com/expressjs/express<br><b>you ›</b> Explain issue #3<br><b>you ›</b> Generate fix for issue #2</div>
-  <div class="foot"><img src="ordo-logo.png" alt=""><span>Also a first-class IBM Bob mode · 12</span></div>
+  <div class="foot"><img src="ordo-logo.png" alt=""><span>Built on IBM Bob 2.0 · 12</span></div>
 </section>
 
 <!-- 13 · Difference -->
@@ -294,11 +294,12 @@
   <h2>From a list of problems to a plan of action.</h2>
   <table>
     <tr><th></th><th>Typical static-analysis report</th><th class="us">Ordo</th></tr>
+    <tr><td>Engine</td><td class="them">Static rule set</td><td class="us">IBM Bob 2.0, assisted by watsonx.ai</td></tr>
     <tr><td>Output</td><td class="them">A long list of findings</td><td class="us">A ranked list and a roadmap</td></tr>
     <tr><td>Priority</td><td class="them">Rule severity</td><td class="us">Urgency, business impact and effort</td></tr>
     <tr><td>Explanation</td><td class="them">Rule identifier</td><td class="us">Plain-English reasoning per finding</td></tr>
     <tr><td>Fix path</td><td class="them">Left to the engineer</td><td class="us">Fix plan, test strategy, PR summary</td></tr>
-    <tr><td>Interface</td><td class="them">Report file</td><td class="us">Web dashboard and IBM Bob chat</td></tr>
+    <tr><td>Interface</td><td class="them">Report file</td><td class="us">Web dashboard and IBM Bob 2.0 chat</td></tr>
   </table>
   <div class="foot"><img src="ordo-logo.png" alt=""><span>13</span></div>
 </section>
@@ -316,7 +317,7 @@
     <span class="mono soft" style="font-size:20px; letter-spacing:.12em; text-transform:uppercase">Next</span>
     <p style="margin-top:12px; font-size:26px; font-weight:300; color:var(--ink-soft); line-height:1.6">Automatic pull requests · CI integration · multi-repo view · debt trends over time · IDE plugin</p>
   </div>
-  <div class="foot"><span>Ordo · AI maintenance engineer</span><span>14</span></div>
+  <div class="foot"><span>Ordo · AI maintenance engineer · built on IBM Bob 2.0</span><span>14</span></div>
 </section>
 
 </body>

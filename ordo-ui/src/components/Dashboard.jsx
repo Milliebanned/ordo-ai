@@ -29,7 +29,7 @@ export default function Dashboard({ analysis, roadmap, onReset }) {
           {' · '}{metadata.primaryLanguage}
           {aiEnriched ? <span className="dash-tag ai"><Sparkle /> AI-enriched</span> : <span className="dash-tag heur">Heuristic scores</span>}
           <br />
-          <span className="dash-model">Powered by <strong>watsonx.ai</strong> · {modelId}</span>
+          <span className="dash-model">Powered by <strong>IBM Bob 2.0</strong> · assisted by watsonx.ai · {modelId}</span>
         </div>
 
         <button className="reset-btn" onClick={onReset}>
@@ -93,7 +93,7 @@ export default function Dashboard({ analysis, roadmap, onReset }) {
           )}
 
           <div className="model-attribution">
-            Powered by <strong>watsonx.ai</strong> · Model: <strong>{modelId}</strong>
+            Powered by <strong>IBM Bob 2.0</strong> · assisted by watsonx.ai · Model: <strong>{modelId}</strong>
           </div>
         </div>
       </div>

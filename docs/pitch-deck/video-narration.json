@@ -3,7 +3,7 @@
     {
       "id": "s1",
       "slide": 1,
-      "text": "Meet Ordo, the AI maintenance engineer for your codebase, built on IBM watsonx dot AI."
+      "text": "Meet Ordo, the AI maintenance engineer for your codebase, built on IBM Bob 2.0."
     },
     {
       "id": "s2",
@@ -13,26 +13,26 @@
     {
       "id": "s4",
       "slide": 4,
-      "text": "Ordo closes that gap in one pass. It analyzes a GitHub repository, ranks every finding by real risk, turns the list into a roadmap, and prepares the fix, the tests, and the pull request."
+      "text": "Ordo closes that gap in one pass. Running on IBM Bob 2.0, Bob scans a GitHub repository, detects the debt, ranks every finding by real risk, and prepares the fix, the tests, and the pull request."
     },
     {
       "id": "s6",
       "slide": 6,
-      "text": "The ranking is done by IBM Granite on watsonx dot AI. Every finding gets an urgency, business impact, and fix effort score, plus a plain English reason. Let's see it live."
+      "text": "Bob does the heavy lifting. It runs the analysis and ranks every finding by urgency, business impact, and fix effort, with IBM watsonx dot AI assisting on the scoring and plain English explanations. Let's see it live."
     }
   ],
   "demo": [
     {
       "id": "d1",
-      "text": "This is Ordo's web app, running on Vercel. We'll scan a real project, Agora, straight from GitHub."
+      "text": "This is Ordo's web app, running on Vercel. We'll have Bob scan a real project, Agora, straight from GitHub."
     },
     {
       "id": "d2",
-      "text": "I click Scan Repo Now and paste the repository link. While Bob streams the scan, Ordo reads the code through the GitHub API and runs five debt detectors."
+      "text": "I click Scan Repo Now and paste the repository link. Bob takes over, reading the code through the GitHub API and running five debt detectors, live."
     },
     {
       "id": "d3",
-      "text": "Seconds later, the dashboard. Twenty findings, nineteen of them high urgency, each scored by the Granite model for urgency, impact, and effort, with its reasoning attached."
+      "text": "Seconds later, the dashboard. Bob found twenty issues, all of them high urgency, each ranked for urgency, impact, and effort, with watsonx helping to explain why."
     },
     {
       "id": "d4",
@@ -40,19 +40,19 @@
     },
     {
       "id": "d5",
-      "text": "The roadmap is written by the model too. An overall assessment, then three phases the team can schedule."
+      "text": "Bob then sequences everything into a roadmap. An overall assessment, then three phases the team can schedule."
     },
     {
       "id": "d6",
-      "text": "Open any issue to drill in. Ask why it is ranked here, and watsonx explains its reasoning in plain English."
+      "text": "Open any issue to drill in. Ask why it is ranked here, and Bob explains its reasoning in plain English."
     },
     {
       "id": "d7",
-      "text": "Then generate the fix. Ordo returns a step by step remediation plan, code hints, a testing strategy, and a pull request summary, ready to copy straight into GitHub with one click."
+      "text": "Then generate the fix. Bob returns a step by step remediation plan, code hints, a testing strategy, and a pull request summary, ready to copy straight into GitHub with one click."
     },
     {
       "id": "d8",
-      "text": "The same engine runs inside IBM Bob, IBM's AI coding assistant. Ordo ships as a custom Bob mode with three skills, analyze repo, explain issue, and generate fix, so developers can do all of this from chat."
+      "text": "Under the hood, this is IBM Bob 2.0. Ordo ships as a custom Bob mode with three skills, analyze repo, explain issue, and generate fix. Bob runs the scan and detection, with watsonx dot AI assisting."
     },
     {
       "id": "d9",
@@ -63,7 +63,7 @@
     {
       "id": "s14",
       "slide": 14,
-      "text": "Ordo turns software chaos into order. Try it today at ordo with bob dot vercel dot app."
+      "text": "Ordo, built on IBM Bob 2.0, turns software chaos into order. Try it today at ordo with bob dot vercel dot app."
     }
   ]
 }

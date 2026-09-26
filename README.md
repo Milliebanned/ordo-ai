@@ -2,20 +2,20 @@
 
 > Identify technical debt, prioritize issues, generate remediation plans, and prepare fixes — before problems become expensive.
 
-Built for the **IBM Bob 2.0 Hackathon** · Powered by **watsonx.ai** · Model: `ibm/granite-3-8b-instruct`
+Built on **IBM Bob 2.0** for the IBM Bob 2.0 Hackathon · assisted by **watsonx.ai** (IBM Granite)
 
 ---
 
 ## What is Ordo?
 
-Ordo is an AI maintenance engineer that scans a GitHub repository, detects technical debt across 5 categories, scores every issue by urgency and business impact using watsonx.ai, generates a phased roadmap, and produces ready-to-use remediation plans and PR summaries — all accessible through a polished web UI or directly through IBM Bob chat.
+Ordo is an AI maintenance engineer built on IBM Bob 2.0. Bob scans a GitHub repository, detects technical debt across 5 categories, ranks every issue by urgency and business impact, generates a phased roadmap, and produces ready-to-use remediation plans and PR summaries, with watsonx.ai assisting on scoring, explanations and writing. Everything is available through a polished web UI or directly in IBM Bob chat.
 
 ### Demo flow
 
 ```
 1. Paste a GitHub URL → Ordo scans the repo (no cloning required)
 2. View the Debt Dashboard → scored issues ranked by urgency
-3. View the Roadmap → 3-phase maintenance plan from watsonx.ai
+3. View the Roadmap → 3-phase maintenance plan built by Bob, assisted by watsonx.ai
 4. Click any issue → Generate Fix Plan + PR Summary (copy to GitHub)
 5. Or: use Bob chat → "Analyze https://github.com/expressjs/express"
 ```
@@ -139,7 +139,7 @@ Switch to the **Ordo** mode in IBM Bob. Then:
 
 ---
 
-## watsonx.ai Usage
+## How watsonx.ai assists Bob
 
 Every debt item is enriched by `ibm/granite-3-8b-instruct` with:
 - Debt type classification (security / reliability / maintainability / performance / test-coverage)
